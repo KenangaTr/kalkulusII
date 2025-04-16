@@ -95,6 +95,14 @@ button:hover {
     text-align: center;
 }
 
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .navbar-container {
         flex-direction: column;
