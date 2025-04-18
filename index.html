@@ -10,142 +10,22 @@
   <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#loanForm" class="navbar-link">Form Peminjaman</a>
-            <a href="#result" class="navbar-link">Hasil Perhitungan</a>
-            <a href="#penaltyForm" class="navbar-link">Kalkulator Pinalty</a>
+            <a href="index.html" class="navbar-link"><strong>Beranda</strong></a>
+            <a href="kalkulator.html" class="navbar-link">Kalkulator Bunga</a>
+            <a href="denda.html" class="navbar-link">Kalkulator Denda</a>
         </div>
     </nav>
     <div class="container">
-      <h1>Perhitungan Peminjaman Uang</h1>
-      <form id="loanForm">
-        <label for="principal">Pokok Peminjaman:</label>
-        <input type="number" id="principal" name="principal" required />
+      <h1 class="home">Hitung Bunga Pinjamanmu Sekarang</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum reprehenderit quisquam explicabo debitis blanditiis doloremque, veniam labore, modi repellendus fuga error similique repellat corporis? Provident praesentium modi eligendi pariatur incidunt!</p>
 
-        <label for="tenor">Tenor (bulan):</label>
-        <input type="number" id="tenor" name="tenor" required />
-
-        <label for="interest">Bunga per bulan (%):</label>
-        <input type="number" id="interest" name="interest" required />
-
-        <label for="interestType">Jenis Bunga:</label>
-        <select id="interestType" name="interestType">
-          <option value="flat">Flat</option>
-          <option value="anuitas">Anuitas</option>
-          <option value="kontinu">Kontinu</option>
-        </select>
-
-        <button type="button" id="calculateButton">Hitung</button>
-      </form>
-
-      <div id="result"></div>
-      <div id="chartContainer" style="margin-top: 20px;">
-        <canvas id="chart" width="400" height="200"></canvas>
-      </div>
+      
+      
     </div>
 
-    <div class="container">
-      <h1>Kalkulator Pinalty</h1>
-      <form id="penaltyForm">
-        <label for="remainingLoan">Sisa Peminjaman:</label>
-        <input type="number" id="remainingLoan" name="remainingLoan" required>
-
-        <label for="penaltyType">Jenis Denda:</label>
-        <select id="penaltyTypeStandalone" name="penaltyType">
-            <option value="percentage">Persentase</option>
-            <option value="nominal">Nominal</option>
-        </select>
-
-        <label for="penaltyValue">Nilai Denda (persen/nominal):</label>
-        <input type="number" id="penaltyValueStandalone" name="penaltyValue" required>
-
-        <button type="button" id="calculatePenaltyButton">Hitung Denda</button>
-      </form>
-
-      <div id="penaltyResult"></div>
-    </div>
 
     <script src="script.js"></script>
-    <script>
-      document.getElementById('calculatePenaltyButton').addEventListener('click', function() {
-          const remainingLoan = parseFloat(document.getElementById('remainingLoan').value);
-          const penaltyType = document.getElementById('penaltyTypeStandalone').value;
-          const penaltyValue = parseFloat(document.getElementById('penaltyValueStandalone').value);
 
-          let penalty = 0;
-          if (penaltyType === 'percentage') {
-              penalty = remainingLoan * (penaltyValue / 100);
-          } else if (penaltyType === 'nominal') {
-              penalty = penaltyValue;
-          }
-
-          const resultText = `Denda: Rp ${penalty.toFixed(2)}`;
-          document.getElementById('penaltyResult').innerHTML = resultText;
-      });
-    </script>
-    <style>
-      nav {
-          background-color: #007bff;
-          padding: 10px;
-      }
-
-      nav ul {
-          list-style: none;
-          display: flex;
-          justify-content: center;
-          margin: 0;
-          padding: 0;
-      }
-
-      nav ul li {
-          margin: 0 15px;
-      }
-
-      nav ul li a {
-          color: white;
-          text-decoration: none;
-          font-weight: bold;
-      }
-
-      nav ul li a:hover {
-          text-decoration: underline;
-      }
-
-      .navbar {
-          background-color: #007bff;
-          padding: 10px 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: sticky;
-          top: 0;
-          z-index: 1000;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .navbar-container {
-          display: flex;
-          gap: 20px;
-      }
-
-      .navbar-link {
-          color: white;
-          text-decoration: none;
-          font-size: 16px;
-          font-weight: bold;
-          transition: color 0.3s;
-      }
-
-      .navbar-link:hover {
-          color: #ffdd57;
-      }
-
-      @media (max-width: 600px) {
-          .navbar-container {
-              flex-direction: column;
-              gap: 10px;
-          }
-      }
-    </style>
     <footer class="footer">
       &copy; 2025
     </footer>
