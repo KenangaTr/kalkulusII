@@ -6,17 +6,25 @@
     <title>Perhitungan Peminjaman Uang</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Hammersmith+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar">
+      <div class="burger" id="burgerMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
         <div class="navbar-container">
-            <a href="index.html" class="navbar-link"><strong>Beranda</strong></a>
+            <a href="index.html" class="navbar-link">Beranda</a>
             <a href="kalkulator.html" class="navbar-link">Kalkulator Bunga</a>
             <a href="denda.html" class="navbar-link">Kalkulator Denda</a>
         </div>
     </nav>
+    <h1>Perhitungan Peminjaman Uang</h1>
     <div class="container">
-      <h1>Perhitungan Peminjaman Uang</h1>
       <div class="calculator">
           <form id="loanForm">
             <label for="principal">Pokok Peminjaman:</label>
@@ -50,8 +58,21 @@
 
     <script src="script.js"></script>
 
-    <footer class="footer">
-      &copy; 2025
+<footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="kalkulator.html">Kalkulator Bunga</a>
+          <a href="denda.html">Kalkulator Denda</a>
+        </div>
+        <div class="footer-contact">
+          <p>Email: support@kalkulator.com</p>
+          <p>Telepon: +62 812 3456 7890</p>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 Kalkulator Pinjaman. All rights reserved.
+        </div>
+      </div>
     </footer>
   </body>
 </html>

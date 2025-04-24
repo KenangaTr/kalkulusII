@@ -1,13 +1,23 @@
+:root {
+  --blue_dark: #213448;
+  --white: #ffffff;
+  --kuning:#ECEFCA;
+  --black: #000000;
+}
+
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "halant", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
-  color: #333;
+  /* background-color: #f8f9fa; */
+  color: var(--white);
+  
+  background-image: url("media/background.png");
 }
 
 .navbar {
-  background-color: #007bff;
+  font-family: "Halant", serif;
+  background-color: var(--blue_dark);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -16,6 +26,7 @@ body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: row-reverse;
 }
 
 .navbar-container {
@@ -23,39 +34,89 @@ body {
   gap: 20px;
 }
 
+.navbar-logo{
+  font-size: 24px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.navbar-logo img {
+  width: 100px;
+  position: absolute;
+  left: 20px;
+  top: -15px;
+}
 .navbar-link {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   font-size: 16px;
-  font-weight: bold;
+  /* font-weight: bold; */
   transition: color 0.3s;
 }
 
 .navbar-link:hover {
-  color: #ffdd57;
+  color: var(--kuning);
 }
 
 .container {
-  background: white;
+  display: flex;
+  /* background: var(--white); */
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 1028px;
   margin: 20px auto;
+  margin-bottom: 150px;
 }
 
-h1 {
-  text-align: center;
-  color: #007bff;
-  margin-bottom: 20px;
-  font-size: 48px;
+.home-img {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 700px;
+  border-radius: 8px;
+  overflow: hidden;
+  rotate: 5deg;
+}
+.home-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+  max-width: 700px;
 }
 
-.home h1 {
+.home {
   font-size: 72px;
 }
 
+h1 {
+  font-family: "Hammersmith One", sans-serif;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight:100
+}
+
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  padding-right: 20px;
+}
+
+result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  padding-left: 20px;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -71,21 +132,21 @@ input,
 select,
 button {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--blue_dark);
   border-radius: 4px;
   font-size: 16px;
 }
 
 button {
-  background-color: #007bff;
-  color: white;
-  border: none;
+  background-color: var(--kuning);
+  color: var(--black);
+  border: 1px solid var(--blue_dark);
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--blue_dark);
 }
 
 #result {
@@ -106,8 +167,42 @@ button:hover {
   text-align: center;
   margin-top: 20px;
   padding: 10px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--blue_dark);
+  color: var(--white);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffdd57;
+}
+
+.footer-contact {
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -122,7 +217,7 @@ button:hover {
 }
 
 nav {
-  background-color: #007bff;
+  background-color: var(--blue_dark);
   padding: 10px;
 }
 
@@ -139,7 +234,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   font-weight: bold;
 }
@@ -161,7 +256,7 @@ nav ul li a:hover {
   }
 
   .container {
-    padding: 20px;
+    padding: 30px;
     width: 95%;
   }
 
@@ -175,8 +270,8 @@ nav ul li a:hover {
     font-size: 36px;
   }
 
-  .navbar{
-    justify-content: center;
+  .navbar {
+    justify-content: right;
   }
 
   .navbar-container {
@@ -189,7 +284,12 @@ nav ul li a:hover {
   }
 
   .container {
+    flex-direction: column;
     padding: 15px;
+  }
+  .calculator {
+    margin: 20px auto;
+    width: 100%;
   }
 }
 
@@ -198,9 +298,6 @@ nav ul li a:hover {
     font-size: 28px;
   }
 
-  .navbar{
-    justify-content: center;
-  }
 
   .navbar-link {
     font-size: 12px;
@@ -219,5 +316,42 @@ nav ul li a:hover {
   select {
     font-size: 14px;
     padding: 8px;
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+    float: left;
+  }
+
+  .navbar-container {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--blue_dark);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .navbar-container.active {
+    display: flex;
   }
 }

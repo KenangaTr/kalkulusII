@@ -1,3 +1,10 @@
+const burgerMenu = document.getElementById('burgerMenu');
+const navbarContainer = document.querySelector('.navbar-container');
+
+burgerMenu.addEventListener('click', () => {
+  navbarContainer.classList.toggle('active');
+});
+
 document
   .getElementById("calculateButton")
   .addEventListener("click", function () {
@@ -151,3 +158,5 @@ function generateMonthlyChart(hasil, tenorBulan) {
     },
   });
 }
+
+

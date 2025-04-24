@@ -6,28 +6,57 @@
     <title>Perhitungan Peminjaman Uang</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Hammersmith+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-link"><strong>Beranda</strong></a>
-            <a href="kalkulator.html" class="navbar-link">Kalkulator Bunga</a>
-            <a href="denda.html" class="navbar-link">Kalkulator Denda</a>
-        </div>
+      <div class="burger" id="burgerMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo"><img src="media/logo2.png" alt=""></a>
+        <a href="index.html" class="navbar-link">Beranda</a>
+        <a href="kalkulator.html" class="navbar-link">Kalkulator Bunga</a>
+        <a href="denda.html" class="navbar-link">Kalkulator Denda</a>
+      </div>
     </nav>
+    <h1 class="home">MATHLETES</h1>
     <div class="container">
-      <h1 class="home">Hitung Bunga Pinjamanmu Sekarang</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum reprehenderit quisquam explicabo debitis blanditiis doloremque, veniam labore, modi repellendus fuga error similique repellat corporis? Provident praesentium modi eligendi pariatur incidunt!</p>
-
-      
-      
+      <div class="home-text">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          reprehenderit quisquam explicabo debitis blanditiis doloremque, veniam
+          labore, modi repellendus fuga error similique repellat corporis?
+          Provident praesentium modi eligendi pariatur incidunt!
+        </p>
+        <a href="kalkulator.html"><button>Mulai Hitung =></button></a>
+      </div>
+      <div class="home-img">
+        <img style="width: 100%" src="media/home.png" alt="img" />
+      </div>
     </div>
-
 
     <script src="script.js"></script>
 
     <footer class="footer">
-      &copy; 2025
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="index.html">Beranda</a>
+          <a href="kalkulator.html">Kalkulator Bunga</a>
+          <a href="denda.html">Kalkulator Denda</a>
+        </div>
+        <div class="footer-contact">
+          <p>Email: support@kalkulator.com</p>
+          <p>Telepon: +62 812 3456 7890</p>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 Kalkulator Pinjaman. All rights reserved.
+        </div>
+      </div>
     </footer>
   </body>
 </html>
