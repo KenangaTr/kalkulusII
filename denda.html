@@ -6,10 +6,12 @@
     <title>Perhitungan Peminjaman Uang</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Hammersmith+One&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Hammersmith+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav class="navbar">
@@ -18,48 +20,58 @@
         <div></div>
         <div></div>
       </div>
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-link">Beranda</a>
-            <a href="kalkulator.html" class="navbar-link">Kalkulator Bunga</a>
-            <a href="denda.html" class="navbar-link">Kalkulator Denda</a>
-        </div>
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo"><img src="media/logo2.png" alt=""></a>
+        <a href="index.html" class="navbar-link">Beranda</a>
+        <a href="kalkulator.html" class="navbar-link">Kalkulator Bunga</a>
+        <a href="denda.html" class="navbar-link">Kalkulator Denda</a>
+      </div>
     </nav>
-    <h1>Perhitungan Peminjaman Uang</h1>
+    <h1>Perhitungan Denda Pinjaman</h1>
     <div class="container">
       <div class="calculator">
-          <form id="loanForm">
-            <label for="principal">Pokok Peminjaman:</label>
-            <input type="number" id="principal" name="principal" required />
-    
-            <label for="tenor">Tenor (bulan):</label>
-            <input type="number" id="tenor" name="tenor" required />
-    
-            <label for="interest">Bunga per bulan (%):</label>
-            <input type="number" id="interest" name="interest" required />
-    
-            <label for="interestType">Jenis Bunga:</label>
-            <select id="interestType" name="interestType">
-              <option value="flat">Flat</option>
-              <option value="efektif">Efektif</option>
-              <option value="anuitas">Anuitas</option>
-            </select>
-    
-            <button type="button" id="calculateButton">Hitung</button>
-          </form>
+        <form id="dendaForm">
+          <label for="principal">Pokok Peminjaman:</label>
+          <input type="number" id="principal" name="principal" required />
+
+          <label for="tenor">Tenor (bulan):</label>
+          <input type="number" id="tenor" name="tenor" required />
+
+          <label for="interest">Bunga per bulan (%):</label>
+          <input type="number" id="interest" name="interest" required />
+
+          <label for="interestType">Jenis Bunga:</label>
+          <select id="interestType" name="interestType">
+            <option value="flat">Flat</option>
+            <option value="efektif">Efektif</option>
+            <option value="anuitas">Anuitas</option>
+          </select>
+
+          <label for="lamaPinjam">Lama Pinjam(bulan)(dari bulan pertama)</label>
+          <input type="number" id="lamaPinjam" name="lamaPinjam" required />
+
+          <label for="dendaType">Jenis Denda:</label>
+          <select id="dendaType" name="dendaType">
+            <option value="Persen">Persen</option>
+            <option value="Nominal">Nominal</option>
+          </select>
+
+          <label for="denda">Jumlah Denda</label>
+          <input type="number" id="denda" name="denda" required />
+
+          <button type="button" id="dendaButton">Hitung</button>
+        </form>
       </div>
       <div class="result-container">
-          <h2>Hasil Perhitungan:</h2>
-          <div id="result"></div>
-          <div id="chartContainer" style="margin-top: 20px;">
-            <canvas id="chart" width="400" height="200"></canvas>
-          </div>
-      </div>    
+        <h2>Hasil Perhitungan:</h2>
+        <div id="result"></div>
+        </div>
+      </div>
     </div>
-
 
     <script src="script.js"></script>
 
-<footer class="footer">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-links">
           <a href="index.html">Beranda</a>
@@ -67,8 +79,8 @@
           <a href="denda.html">Kalkulator Denda</a>
         </div>
         <div class="footer-contact">
-          <p>Email: support@kalkulator.com</p>
-          <p>Telepon: +62 812 3456 7890</p>
+          <p>Email: ramatriramdhani@gmail.com</p>
+          <p>Telepon: +6285715143251</p>
         </div>
         <div class="footer-copyright">
           &copy; 2025 Kalkulator Pinjaman. All rights reserved.

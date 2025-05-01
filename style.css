@@ -1,7 +1,7 @@
 :root {
   --blue_dark: #213448;
   --white: #ffffff;
-  --kuning:#ECEFCA;
+  --kuning: #ecefca;
   --black: #000000;
 }
 
@@ -11,8 +11,9 @@ body {
   padding: 0;
   /* background-color: #f8f9fa; */
   color: var(--white);
-  
   background-image: url("media/background.png");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
 }
 
 .navbar {
@@ -34,7 +35,7 @@ body {
   gap: 20px;
 }
 
-.navbar-logo{
+.navbar-logo {
   font-size: 24px;
   color: var(--white);
   text-decoration: none;
@@ -50,7 +51,7 @@ body {
 .navbar-link {
   color: var(--white);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   /* font-weight: bold; */
   transition: color 0.3s;
 }
@@ -65,7 +66,7 @@ body {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 100%;
   max-width: 1028px;
   margin: 20px auto;
   margin-bottom: 150px;
@@ -73,19 +74,45 @@ body {
 
 .home-img {
   display: flex;
+  justify-content: right;
   flex-direction: column;
-  width: 60%;
+  width: 90%;
   max-width: 700px;
   border-radius: 8px;
   overflow: hidden;
-  rotate: 5deg;
+  /* rotate: 5deg; */
 }
+.home-img img {
+  width: 90%;
+  height: auto;
+}
+.home-img img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
 .home-text {
   display: flex;
+  text-align: justify;
+  justify-content: center;
+  /* align-items: center;  */
+  /* height:unset; */
+  display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 40%;
+  width: 90%;
   max-width: 700px;
+  margin: 10px;
+}
+
+.gap4{
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center;  */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .home {
@@ -98,9 +125,19 @@ h1 {
   color: var(--white);
   margin-bottom: 20px;
   font-size: 48px;
-  font-weight:100
+  font-weight: 100;
+}
+h2 {
+  color: var(--white);
+  margin: 0;
 }
 
+p{
+  color: var(--white);
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
 
 .calculator {
   display: flex;
@@ -110,6 +147,11 @@ h1 {
   padding-right: 20px;
 }
 
+ul {
+  padding-left: 20px;
+  margin: 0;
+  /* margin-left: 5px; */
+}
 result-container {
   display: flex;
   flex-direction: column;
@@ -125,7 +167,8 @@ form {
 
 label {
   font-weight: bold;
-  color: #555;
+  color: var(--white);
+  margin-bottom: 5px; /* Add spacing below labels */
 }
 
 input,
@@ -147,10 +190,11 @@ button {
 
 button:hover {
   background-color: var(--blue_dark);
+  color: var(--white);
 }
 
 #result {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 15px;
   background: #e9ecef;
   border-radius: 4px;
@@ -161,6 +205,11 @@ button:hover {
 #chartContainer {
   margin-top: 30px;
   text-align: center;
+  padding: 15px;
+  background: #e9ecef;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
 }
 
 .footer {
@@ -205,16 +254,6 @@ button:hover {
   margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .container {
-    width: 95%;
-  }
-}
 
 nav {
   background-color: var(--blue_dark);
@@ -265,7 +304,10 @@ nav ul li a:hover {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  
+}
+  @media (max-width: 768px) {
   h1 {
     font-size: 36px;
   }
@@ -286,18 +328,43 @@ nav ul li a:hover {
   .container {
     flex-direction: column;
     padding: 15px;
+    width: 95%;
   }
+
   .calculator {
     margin: 20px auto;
     width: 100%;
   }
+  .burger {
+    display: flex;
+    float: left;
+  }
+
+  .navbar-container {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--blue_dark);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .navbar-container.active {
+    display: flex;
+  }
+
+  
+
+  
 }
 
 @media (max-width: 480px) {
   h1 {
     font-size: 28px;
   }
-
 
   .navbar-link {
     font-size: 12px;
@@ -333,25 +400,3 @@ nav ul li a:hover {
   transition: 0.3s;
 }
 
-@media (max-width: 768px) {
-  .burger {
-    display: flex;
-    float: left;
-  }
-
-  .navbar-container {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background-color: var(--blue_dark);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .navbar-container.active {
-    display: flex;
-  }
-}
