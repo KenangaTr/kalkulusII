@@ -16,6 +16,33 @@ body {
   /* background-repeat: no-repeat; */
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0; /* Awalnya elemen tidak terlihat */
+  animation: fadeIn 1s ease-in-out forwards; /* Animasi muncul */
+}
+
+.scroll-fade {
+  opacity: 0; /* Awalnya elemen tidak terlihat */
+  transform: translateX(500px); /* Posisi awal */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1; /* Elemen terlihat */
+  transform: translateY(0); /* Posisi akhir */
+}
+
 .navbar {
   font-family: "Halant", serif;
   background-color: var(--blue_dark);
@@ -27,13 +54,28 @@ body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
 }
 
 .navbar-container {
   display: flex;
   gap: 20px;
 }
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
 
 .navbar-logo {
   font-size: 24px;
@@ -104,6 +146,12 @@ body {
   margin: 10px;
 }
 
+iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
 .gap4{
   display: flex;
   justify-content: flex-start;
@@ -162,13 +210,13 @@ result-container {
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  /* gap: 5px; */
 }
 
 label {
   font-weight: bold;
   color: var(--white);
-  margin-bottom: 5px; /* Add spacing below labels */
+  margin-top: 10px; /* Add spacing below labels */
 }
 
 input,
@@ -181,6 +229,7 @@ button {
 }
 
 button {
+  margin-top: 15px;
   background-color: var(--kuning);
   color: var(--black);
   border: 1px solid var(--blue_dark);
@@ -202,6 +251,11 @@ button:hover {
   font-size: 14px;
 }
 
+#result p {
+  margin: 0;
+  font-size: 18px;
+  color: var(--blue_dark);
+}
 #chartContainer {
   margin-top: 30px;
   text-align: center;
@@ -282,16 +336,28 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .container {
+    padding: 30px;
+    width: 90%;
+  }
+
   .navbar-container {
-    flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
 }
 
 @media (max-width: 1024px) {
   h1 {
     font-size: 36px;
+  }
+  .home{
+    font-size: 48px;
   }
 
   .container {
@@ -304,21 +370,14 @@ nav ul li a:hover {
   }
 }
 
-@media (max-width: 900px) {
-  
-}
   @media (max-width: 768px) {
   h1 {
     font-size: 36px;
+    margin: 5px;
   }
 
   .navbar {
     justify-content: right;
-  }
-
-  .navbar-container {
-    flex-direction: column;
-    align-items: center;
   }
 
   .navbar-link {
@@ -361,9 +420,20 @@ nav ul li a:hover {
   
 }
 
+@media (max-width: 600px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 @media (max-width: 480px) {
   h1 {
     font-size: 28px;
+  }
+  .home{
+    font-size: 36px;
+
   }
 
   .navbar-link {
@@ -384,19 +454,5 @@ nav ul li a:hover {
     font-size: 14px;
     padding: 8px;
   }
-}
-
-.burger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.burger div {
-  width: 25px;
-  height: 3px;
-  background-color: var(--white);
-  margin: 3px 0;
-  transition: 0.3s;
 }
 

@@ -13,48 +13,51 @@
   </head>
   <body>
     <nav class="navbar">
+      <a href="index.html" class="navbar-logo"><img src="media/logo2.png" alt=""></a>
       <div class="burger" id="burgerMenu">
         <div></div>
         <div></div>
         <div></div>
       </div>
         <div class="navbar-container">
-            <a href="index.html" class="navbar-logo"><img src="media/logo2.png" alt=""></a>
             <a href="index.html" class="navbar-link">Beranda</a>
             <a href="kalkulator.html" class="navbar-link">Kalkulator Bunga</a>
             <a href="denda.html" class="navbar-link">Kalkulator Denda</a>
         </div>
     </nav>
-    <h1>Perhitungan Bunga Pinjaman</h1>
-    <div class="container">
-      <div class="calculator">
-          <form id="loanForm">
-            <label for="principal">Pokok Peminjaman:</label>
-            <input type="number" id="principal" name="principal" required />
-    
-            <label for="tenor">Tenor (bulan):</label>
-            <input type="number" id="tenor" name="tenor" required />
-    
-            <label for="interest">Bunga per bulan (%): (bunga per tahun/12)</label>
-            <input type="number" id="interest" name="interest" required />
-    
-            <label for="interestType">Jenis Bunga:</label>
-            <select id="interestType" name="interestType">
-              <option value="flat">Flat</option>
-              <option value="efektif">Efektif</option>
-              <option value="anuitas">Anuitas</option>
-            </select>
-    
-            <button type="button" id="calculateButton">Hitung</button>
-          </form>
+
+    <div class="fade-in">
+      <h1>Perhitungan Bunga Pinjaman</h1>
+      <div class="container">
+        <div class="calculator">
+            <form id="loanForm">
+              <label for="principal">Pokok Peminjaman:</label>
+              <input type="number" id="principal" name="principal" required />
+      
+              <label for="tenor">Tenor (bulan):</label>
+              <input type="number" id="tenor" name="tenor" required />
+      
+              <label for="interest">Bunga per bulan (%): (bunga per tahun/12)</label>
+              <input type="number" id="interest" name="interest" required />
+      
+              <label for="interestType">Jenis Bunga:</label>
+              <select id="interestType" name="interestType">
+                <option value="flat">Flat</option>
+                <option value="efektif">Efektif</option>
+                <option value="anuitas">Anuitas</option>
+              </select>
+      
+              <button type="button" id="calculateButton">Hitung</button>
+            </form>
+        </div>
+        <div class="result-container">
+            <h2>Hasil Perhitungan:</h2>
+            <div id="result"></div>
+            <div id="chartContainer" style="margin-top: 20px;">
+              <canvas id="chart" width="400" height="200"></canvas>
+            </div>
+        </div>    
       </div>
-      <div class="result-container">
-          <h2>Hasil Perhitungan:</h2>
-          <div id="result"></div>
-          <div id="chartContainer" style="margin-top: 20px;">
-            <canvas id="chart" width="400" height="200"></canvas>
-          </div>
-      </div>    
     </div>
 
 

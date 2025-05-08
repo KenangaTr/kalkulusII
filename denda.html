@@ -16,18 +16,20 @@
   </head>
   <body>
     <nav class="navbar">
+      <a href="index.html" class="navbar-logo"><img src="media/logo2.png" alt=""></a>
       <div class="burger" id="burgerMenu">
         <div></div>
         <div></div>
         <div></div>
       </div>
       <div class="navbar-container">
-        <a href="index.html" class="navbar-logo"><img src="media/logo2.png" alt=""></a>
         <a href="index.html" class="navbar-link">Beranda</a>
         <a href="kalkulator.html" class="navbar-link">Kalkulator Bunga</a>
         <a href="denda.html" class="navbar-link">Kalkulator Denda</a>
       </div>
     </nav>
+
+    <div class="fade-in">
     <h1>Perhitungan Denda Pinjaman</h1>
     <div class="container">
       <div class="calculator">
@@ -37,16 +39,6 @@
 
           <label for="tenor">Tenor (bulan):</label>
           <input type="number" id="tenor" name="tenor" required />
-
-          <label for="interest">Bunga per bulan (%):</label>
-          <input type="number" id="interest" name="interest" required />
-
-          <label for="interestType">Jenis Bunga:</label>
-          <select id="interestType" name="interestType">
-            <option value="flat">Flat</option>
-            <option value="efektif">Efektif</option>
-            <option value="anuitas">Anuitas</option>
-          </select>
 
           <label for="lamaPinjam">Lama Pinjam(bulan)(dari bulan pertama)</label>
           <input type="number" id="lamaPinjam" name="lamaPinjam" required />

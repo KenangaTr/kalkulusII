@@ -1,12 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const burgerMenu = document.getElementById("burgerMenu");
+  const burgerMenu = document.querySelector(".burger");
   const navbarContainer = document.querySelector(".navbar-container");
 
   if (burgerMenu && navbarContainer) {
-    burgerMenu.addEventListener("click", () => {
-      navbarContainer.classList.toggle("active");
+    burgerMenu.addEventListener("click", function () {
+      navbarContainer.classList.toggle("active"); // Tambahkan atau hapus kelas "active"
     });
   }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Animasi saat membuka halaman
+  const fadeInElements = document.querySelectorAll(".fade-in");
+  fadeInElements.forEach((el) => {
+    el.classList.add("visible");
+  });
+
+  // Animasi saat scroll
+  const scrollFadeElements = document.querySelectorAll(".scroll-fade");
+
+  const handleScroll = () => {
+    scrollFadeElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Panggil sekali untuk elemen yang sudah terlihat
+});
 
   const calculateButton = document.getElementById("calculateButton");
   if (calculateButton) {
@@ -76,40 +100,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const dendaButton = document.getElementById("dendaButton");
   if (dendaButton) {
     dendaButton.addEventListener("click", function () {
-      const pokokPinjaman = parseFloat(
-        document.getElementById("principal").value
-      );
+      const pokokPinjaman = parseFloat(document.getElementById("principal").value);
       const tenorBulan = parseInt(document.getElementById("tenor").value);
-      const bungaPerBulan =
-        parseFloat(document.getElementById("interest").value) / 100;
-        const interestType = document.getElementById("interestType").value;
-        const lamaPinjam = parseInt(document.getElementById("lamaPinjam").value);
-        const dendaType = document.getElementById("dendaType").value;
+      const lamaPinjam = parseInt(document.getElementById("lamaPinjam").value);
+      const dendaType = document.getElementById("dendaType").value;
       const dendaValue = parseFloat(document.getElementById("denda").value);
       
 
       // Step 1: Calculate cicilanBulanan: cicilanBulananArray, totalPembayaran, totalBunga 
-      let hasil ;
-      if (interestType === "flat") {
-        hasil = { pinjam : hitungFlat(pokokPinjaman, tenorBulan, bungaPerBulan)};
-      }else if (interestType === "anuitas") {
-        hasil = { pinjam : hitungAnuitas(pokokPinjaman, tenorBulan, bungaPerBulan)};
-      }else if (interestType === "efektif") {
-        hasil = { pinjam : hitungEfektif(pokokPinjaman, tenorBulan, bungaPerBulan)};
-      }else {
-        console.error("Invalid interest type:", interestType);
-        alert("Tipe bunga tidak valid. Harap pilih tipe bunga yang benar.");
-        return; // Exit the function to prevent further errors
-      }
+      cicilanBulanan = pokokPinjaman/tenorBulan ;
       
       // Step 2: Calculate paid loan
       let totalDibayar = 0;
       for (let i = 0; i < lamaPinjam; i++) {
-        totalDibayar += parseFloat(hasil.pinjam.cicilanBulanan[i].toFixed(2));
+        totalDibayar += cicilanBulanan;
       }
 
       // Step 3: Calculate remaining loan and penalty
-      const sisaPinjaman = parseFloat(hasil.pinjam.totalPembayaran.toFixed(2)) - totalDibayar;
+      const sisaPinjaman = pokokPinjaman - totalDibayar;
       let denda = 0;
       if (dendaType === "Persen") {
         denda = sisaPinjaman * (dendaValue / 100);
@@ -122,8 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Display results
       const resultHTML = `
-        <p><strong>Total Denda:</strong> Rp ${denda.toFixed(2)}</p>
-        <p><strong>Sisa Pinjaman:</strong> Rp ${sisaPinjaman.toFixed(2)}</p>
+      <p><strong>Total Denda:</strong> Rp ${denda.toFixed(2)}</p>
+      <p><strong>Sisa Pinjaman:</strong> Rp ${sisaPinjaman.toFixed(2)}</p>
         <p><strong>Total yang Harus Dibayar:</strong> Rp ${totalBayar.toFixed(
           2
         )}</p>
@@ -131,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("result").innerHTML = resultHTML;
     });
   }
-});
+
 
 function hitungFlat(pokokPinjaman, tenorBulan, bungaPerBulan) {
   const bungaBulanan = pokokPinjaman * bungaPerBulan;
