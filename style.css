@@ -1,4 +1,5 @@
 :root {
+  --red: #ff0000;
   --blue_dark: #213448;
   --white: #ffffff;
   --kuning: #ecefca;
@@ -185,6 +186,12 @@ p{
   font-size: 18px;
   line-height: 1.5;
   margin: 0;
+}
+
+.danger{
+  color: var(--red);
+  border-radius: 4px;
+  font-size: 12px;
 }
 
 .calculator {
